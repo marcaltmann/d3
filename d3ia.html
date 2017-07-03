@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+ #borderdiv {
+width: 200px;
+height: 50px;
+border: 1px solid gray;
+}
+    </style>
+    <script src="d3.min.js"></script>
+  </head>
+  <body>
+<div id="borderdiv"></div>
+
+    <script>
+var someNumbers = [17, 82, 9, 500, 40];
+var smallerNumbers = someNumbers.filter(function(el) {return el <= 40});
+
+d3.select("body").selectAll("div")
+.data(smallerNumbers)
+.enter()
+.append("div")
+.html(function (d) {return d});
+
+    </script>
+  </body>
+</html>
